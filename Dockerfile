@@ -1,4 +1,6 @@
 FROM gcr.io/google-appengine/golang
 
-COPY . /go/src/app
-RUN go-wrapper install
+RUN mkdir /goapp
+ADD . /goapp
+WORKDIR /goapp
+CMD ["./webhello"]
